@@ -1,2 +1,2 @@
-# Java_Swing_Practice
+# Java Swing Practice
 Learning Materials in Java Swing
