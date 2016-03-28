@@ -11,7 +11,7 @@ public class SwingPractice {
 		
 		SwingUtilities.invokeLater(new Runnable(){
 			public void run(){
-				JFrame test = new MainFrame("Hello");
+				JFrame test = new MainFrame("Login");
 				test.setSize(500, 400);
 				test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				test.setVisible(true);
