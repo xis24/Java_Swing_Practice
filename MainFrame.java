@@ -2,15 +2,16 @@ package Java_Swing_Practice;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
 public class MainFrame extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6958914781276334827L;
 	private JTextArea textArea;
 	private DetailsPanel detailsPanel;
 	
