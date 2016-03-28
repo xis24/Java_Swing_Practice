@@ -1,0 +1,7 @@
+package Java_Swing_Practice;
+
+import java.util.EventListener;
+
+public interface DetailListener extends EventListener {
+	public void detailEventOccurred(DetailEvent event);
+}
