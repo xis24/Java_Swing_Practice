@@ -5,7 +5,6 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.EventListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -32,13 +31,13 @@ public class DetailsPanel extends JPanel {
 		size.width = 250;
 		setPreferredSize(size);
 		
-		setBorder(BorderFactory.createTitledBorder("Personal Detials"));
+		setBorder(BorderFactory.createTitledBorder("Log In"));
 		
-		JLabel nameLabel = new JLabel("Name: ");
-		JLabel occupationLabel = new JLabel("Occupations");
+		JLabel userNameLabel = new JLabel("User Name: ");
+		JLabel passwdLabel = new JLabel("Password");
 		
-		final JTextField nameField = new JTextField(10);
-		final JTextField occupationField = new JTextField(10);
+		final JTextField userNameField = new JTextField(10);
+		final JTextField passwdField = new JTextField(10);
 		
 		JButton addBtn = new JButton("Add");
 		
@@ -47,10 +46,10 @@ public class DetailsPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				String name = nameField.getText();
-				String occupation = occupationField.getText();
+				String userName = userNameField.getText();
+				String passwd = passwdField.getText();
 				
-				String text = name +": " +  occupation + "\n";
+				String text = userName +": " +  passwd + "\n";
 				
 				fireDetailEvent(new DetailEvent(this, text));
 			}
@@ -72,21 +71,21 @@ public class DetailsPanel extends JPanel {
 		gc.gridx = 0;
 		gc.gridy = 0; 
 		
-		add(nameLabel, gc);
+		add(userNameLabel, gc);
 		
 		gc.gridx = 0;
 		gc.gridy = 1;
-		add(occupationLabel, gc);
+		add(passwdLabel, gc);
 		
 		//second column >>>>>>>
 		gc.anchor = GridBagConstraints.LINE_START;
 		gc.gridx = 1;
 		gc.gridy = 0; 
-		add(nameField, gc);
+		add(userNameField, gc);
 		
 		gc.gridx = 1;
 		gc.gridy = 1; 
-		add(occupationField, gc);
+		add(passwdField, gc);
 		
 		//Final row
 		gc.weighty = 10; //weight of button
