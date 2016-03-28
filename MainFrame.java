@@ -11,7 +11,9 @@ import javax.swing.JTextArea;
 
 public class MainFrame extends JFrame {
 	
-	JTextArea textArea;
+	private JTextArea textArea;
+	private DetailsPanel detailsPanel;
+	
 	public MainFrame(String tile){
 		super(tile);
 		
@@ -21,24 +23,21 @@ public class MainFrame extends JFrame {
 		
 		//create swing component
 		textArea = new JTextArea();
-		JButton button = new JButton("Click me");
+		
+		detailsPanel = new DetailsPanel();
+		detailsPanel.addDetailListener(new DetailListener(){
+			public void detailEventOccurred(DetailEvent event){
+				String text = event.getText();
+				textArea.append(text);
+			}
+		});
 		
 		//add your swing component to content pane
 		Container container = getContentPane();
 		
 		container.add(textArea, BorderLayout.CENTER);
-		container.add(button, BorderLayout.SOUTH);
+		container.add(detailsPanel, BorderLayout.WEST);
 		
-		
-		//add behavios 
-		button.addActionListener( new ActionListener(){
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				textArea.append("Hello World\n");
-			}
-			
-		});
 	}
 }
